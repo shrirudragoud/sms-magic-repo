@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+@layer base {
+  .font-horror {
+    font-family: 'Creepster', cursive;
+  }
+  
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .animate-fly-bat {
+    animation: fly-bat 20s linear infinite;
+  }
+
+  .animate-creepy {
+    animation: creepy 5s ease-in-out infinite;
+  }
+
+  .animate-rise {
+    animation: rise 2s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fly-bat {
+  0% {
+    transform: translate(-100%, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(100vw, -50vh) rotate(45deg) scale(1.2);
+  }
+  50% {
+    transform: translate(200vw, 0) rotate(0deg) scale(1);
+  }
+  75% {
+    transform: translate(100vw, 50vh) rotate(-45deg) scale(0.8);
+  }
+  100% {
+    transform: translate(-100%, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes creepy {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(249,115,22,0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(249,115,22,0.6));
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes prowl {
+  0% {
+    transform: translateX(-100vw) scaleX(1);
+  }
+  45%, 55% {
+    transform: translateX(50vw) scaleX(1);
+  }
+  50% {
+    transform: translateX(50vw) scaleX(-1);
+  }
+  100% {
+    transform: translateX(200vw) scaleX(-1);
+  }
+}
+
+@keyframes reachForCandy {
+  0%, 100% {
+    transform: translate(var(--start-x), var(--start-y)) rotate(var(--rotation));
+  }
+  50% {
+    transform: translate(var(--reach-x), var(--reach-y)) rotate(calc(var(--rotation) + var(--reach-rotate)));
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation));
+  }
+  50% {
+    transform: translateY(-5px) rotate(var(--rotation));
+  }
+}
+
+@keyframes skeletonRise {
+  0% {
+    transform: translateY(100%) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-20%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spookyFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+  50% {
+    transform: translateY(-15px) rotate(calc(var(--rotation, 0deg) + 5deg));
+  }
+}
+
+@keyframes wingFlap {
+  0% {
+    transform: scaleY(1) rotate(var(--rotation, 0deg));
+  }
+  100% {
+    transform: scaleY(0.8) rotate(var(--rotation, 0deg));
+  }
+}
+
+@keyframes flyBat {
+  0% {
+    transform: translate(-100vw, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(25vw, -20vh) rotate(15deg);
+  }
+  50% {
+    transform: translate(50vw, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(75vw, 20vh) rotate(-15deg);
+  }
+  100% {
+    transform: translate(200vw, 0) rotate(0deg);
+  }
+}
